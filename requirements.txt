@@ -1,0 +1,7 @@
+librosa
+soundfile
+moviepy
+numpy
+scipy
+spleeter
+webrtcvad

@@ -1,0 +1,13 @@
+flowchart TD
+    A[命令行参数] -->|--audio --videos --output --loops| B[解析参数 main.py]
+    B --> C[加载音频 detect_strong_hits(audio_analysis.py)]
+    C --> D{计算重击点}
+    D -->|onset/RMS 归一化<br>平滑+阈值+间隔| E[hit_times (秒)]
+    E --> F[循环重击时间\n(loops 次)]
+    B --> G[音频循环 audio_loop\n(loops 次)]
+    B --> H[加载素材视频列表]
+    F --> I[按重击分段构建时间片]
+    H --> I
+    I --> J[轮流切片拼接\nconcatenate_videoclips]
+    G --> J
+    J --> K[写出成片 result.mp4\nfps=25, codec=libx264, audio=aac]
