@@ -8,7 +8,7 @@ from video_edit import build_beat_synced_video
 
 # 直接在代码里配置输入/输出，运行 main.py 时无需再传命令行参数。
 BASE_DIR = Path(__file__).resolve().parent
-AUDIO_PATH = BASE_DIR / "002.mp3"
+AUDIO_PATH = BASE_DIR / "006.mp3"
 VIDEO_DIR = BASE_DIR / "voice_extracted"
 OUTPUT_PATH = BASE_DIR / "result.mp4"
 
